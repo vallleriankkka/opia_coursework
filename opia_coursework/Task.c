@@ -13,7 +13,7 @@ int measurement(Component c);
 
 int main()
 {
-	setlocale(LC_CTYPE, "");
+	setlocale(LC_ALL, ".utf-8");
 
 	Component qry = { "QRY", {41.9, 47.8, 48.3, 48.8, 49.3}, {0}, 0 };
 	Component rpc = { "RPC", {57.4, 55.4, 53.4, 51.4, 54.8}, {0}, 0 };
@@ -42,15 +42,15 @@ int measurement(Component c)
 				if (run >= 2)
 				{
 					c.state = 1;
-					printf("Q[%d]=%.2f ПРЕДУПРЕЖДЕНИЕ\n", i, c.Q[i]);
+					printf("Q[%d]=%.2f РџР Р•Р”РЈРџР Р•Р–Р”Р•РќРР•\n", i, c.Q[i]);
 				}
 				else
-					printf("Q[%d]=%.2f норма для двух измерений\n", i, c.Q[i]);
+					printf("Q[%d]=%.2f РЅРѕСЂРјР° РґР»СЏ РґРІСѓС… РёР·РјРµСЂРµРЅРёР№\n", i, c.Q[i]);
 			}
 			else
 			{
 				run = 0;
-				printf("Q[%d]=%.2f НОРМА\n", i, c.Q[i]);
+				printf("Q[%d]=%.2f РќРћР РњРђ\n", i, c.Q[i]);
 			}
 		}
 		return 0;
